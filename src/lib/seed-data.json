@@ -1,0 +1,1013 @@
+{
+ "Farms": [
+  {
+   "FarmID": "GAWI",
+   "Name_EN": "Gawi",
+   "Name_AM": "ጋዊ",
+   "AnnualHarvestPlanKg": 0,
+   "LastYearHarvestKg": 0
+  },
+  {
+   "FarmID": "TELLI",
+   "Name_EN": "Telli",
+   "Name_AM": "ጠሊ",
+   "AnnualHarvestPlanKg": 0,
+   "LastYearHarvestKg": 0
+  },
+  {
+   "FarmID": "CHETU",
+   "Name_EN": "Chetu",
+   "Name_AM": "ጨቱ",
+   "AnnualHarvestPlanKg": 0,
+   "LastYearHarvestKg": 0
+  },
+  {
+   "FarmID": "EPHRATA",
+   "Name_EN": "Ephrata",
+   "Name_AM": "ኤፍራታ",
+   "AnnualHarvestPlanKg": 0,
+   "LastYearHarvestKg": 0
+  },
+  {
+   "FarmID": "KAMISSE",
+   "Name_EN": "Kamisse",
+   "Name_AM": "ከሚሴ",
+   "AnnualHarvestPlanKg": 0,
+   "LastYearHarvestKg": 0
+  },
+  {
+   "FarmID": "SHAKIS",
+   "Name_EN": "Shakis",
+   "Name_AM": "ሻኪሶ",
+   "AnnualHarvestPlanKg": 0,
+   "LastYearHarvestKg": 0
+  }
+ ],
+ "Blocks": [
+  {
+   "FarmID": "GAWI",
+   "Block": "Block A"
+  },
+  {
+   "FarmID": "GAWI",
+   "Block": "Block B"
+  },
+  {
+   "FarmID": "GAWI",
+   "Block": "Block C"
+  },
+  {
+   "FarmID": "GAWI",
+   "Block": "Block D"
+  },
+  {
+   "FarmID": "GAWI",
+   "Block": "Block E"
+  },
+  {
+   "FarmID": "GAWI",
+   "Block": "Block F"
+  },
+  {
+   "FarmID": "GAWI",
+   "Block": "Block Less & Admin"
+  },
+  {
+   "FarmID": "TELLI",
+   "Block": "Block A"
+  },
+  {
+   "FarmID": "TELLI",
+   "Block": "Block B"
+  },
+  {
+   "FarmID": "TELLI",
+   "Block": "Block C"
+  },
+  {
+   "FarmID": "TELLI",
+   "Block": "Block D"
+  },
+  {
+   "FarmID": "TELLI",
+   "Block": "Block E"
+  },
+  {
+   "FarmID": "TELLI",
+   "Block": "Block Less & Admin"
+  },
+  {
+   "FarmID": "CHETU",
+   "Block": "Block A"
+  },
+  {
+   "FarmID": "CHETU",
+   "Block": "Block B"
+  },
+  {
+   "FarmID": "CHETU",
+   "Block": "Block C"
+  },
+  {
+   "FarmID": "CHETU",
+   "Block": "Block D"
+  },
+  {
+   "FarmID": "CHETU",
+   "Block": "Block E"
+  },
+  {
+   "FarmID": "CHETU",
+   "Block": "Block Less & Admin"
+  },
+  {
+   "FarmID": "EPHRATA",
+   "Block": "Block 1",
+   "AreaHa": 34
+  },
+  {
+   "FarmID": "EPHRATA",
+   "Block": "Block 2",
+   "AreaHa": 32
+  },
+  {
+   "FarmID": "EPHRATA",
+   "Block": "Block 3",
+   "AreaHa": 10.8
+  },
+  {
+   "FarmID": "EPHRATA",
+   "Block": "Block 4",
+   "AreaHa": 20
+  },
+  {
+   "FarmID": "EPHRATA",
+   "Block": "Block 5"
+  },
+  {
+   "FarmID": "EPHRATA",
+   "Block": "Block 6"
+  },
+  {
+   "FarmID": "EPHRATA",
+   "Block": "Block Less & Admin"
+  },
+  {
+   "FarmID": "KAMISSE",
+   "Block": "Block A"
+  },
+  {
+   "FarmID": "KAMISSE",
+   "Block": "Block B"
+  },
+  {
+   "FarmID": "KAMISSE",
+   "Block": "Block C"
+  },
+  {
+   "FarmID": "KAMISSE",
+   "Block": "Block D"
+  },
+  {
+   "FarmID": "KAMISSE",
+   "Block": "Block Less & Admin"
+  },
+  {
+   "FarmID": "SHAKIS",
+   "Block": "Block A"
+  },
+  {
+   "FarmID": "SHAKIS",
+   "Block": "Block B"
+  },
+  {
+   "FarmID": "SHAKIS",
+   "Block": "Block C"
+  },
+  {
+   "FarmID": "SHAKIS",
+   "Block": "Block D"
+  },
+  {
+   "FarmID": "SHAKIS",
+   "Block": "Block Less & Admin"
+  }
+ ],
+ "Users": [
+  {
+   "Name": "Admin",
+   "Role": "Admin",
+   "FarmID": "ALL",
+   "PIN": "1234",
+   "Active": "Yes"
+  },
+  {
+   "Name": "Office Clerk",
+   "Role": "Office",
+   "FarmID": "ALL",
+   "PIN": "3333",
+   "Active": "Yes"
+  },
+  {
+   "Name": "Chetu Supervisor",
+   "Role": "Supervisor",
+   "FarmID": "CHETU",
+   "PIN": "2222",
+   "Active": "Yes"
+  },
+  {
+   "Name": "Chetu Reporter",
+   "Role": "Reporter",
+   "FarmID": "CHETU",
+   "PIN": "1111",
+   "Active": "Yes"
+  },
+  {
+   "Name": "Gawi Supervisor",
+   "Role": "Supervisor",
+   "FarmID": "GAWI",
+   "PIN": "1111",
+   "Active": "Yes"
+  },
+  {
+   "Name": "Gawi Reporter",
+   "Role": "Reporter",
+   "FarmID": "GAWI",
+   "PIN": "1111",
+   "Active": "Yes"
+  },
+  {
+   "Name": "Telli Supervisor",
+   "Role": "Supervisor",
+   "FarmID": "TELLI",
+   "PIN": "1111",
+   "Active": "Yes"
+  },
+  {
+   "Name": "Telli Reporter",
+   "Role": "Reporter",
+   "FarmID": "TELLI",
+   "PIN": "1111",
+   "Active": "Yes"
+  },
+  {
+   "Name": "Ephrata Supervisor",
+   "Role": "Supervisor",
+   "FarmID": "EPHRATA",
+   "PIN": "1111",
+   "Active": "Yes"
+  },
+  {
+   "Name": "Ephrata Reporter",
+   "Role": "Reporter",
+   "FarmID": "EPHRATA",
+   "PIN": "1111",
+   "Active": "Yes"
+  },
+  {
+   "Name": "Kamisse Supervisor",
+   "Role": "Supervisor",
+   "FarmID": "KAMISSE",
+   "PIN": "1111",
+   "Active": "Yes"
+  },
+  {
+   "Name": "Kamisse Reporter",
+   "Role": "Reporter",
+   "FarmID": "KAMISSE",
+   "PIN": "1111",
+   "Active": "Yes"
+  },
+  {
+   "Name": "Shakis Supervisor",
+   "Role": "Supervisor",
+   "FarmID": "SHAKIS",
+   "PIN": "1111",
+   "Active": "Yes"
+  },
+  {
+   "Name": "Shakis Reporter",
+   "Role": "Reporter",
+   "FarmID": "SHAKIS",
+   "PIN": "1111",
+   "Active": "Yes"
+  }
+ ],
+ "Activities": [
+  {
+   "Code": "N01",
+   "Category_AM": "የችግኝ ጣቢያ ሥራዎች",
+   "Category_EN": "Nursery Operations",
+   "Name_AM": "ምንጣሮ",
+   "Name_EN": "Land clearing",
+   "Unit": "ha"
+  },
+  {
+   "Code": "N02",
+   "Category_AM": "የችግኝ ጣቢያ ሥራዎች",
+   "Category_EN": "Nursery Operations",
+   "Name_AM": "ዛፍ መጣል",
+   "Name_EN": "Tree felling",
+   "Unit": "ha"
+  },
+  {
+   "Code": "N03",
+   "Category_AM": "የችግኝ ጣቢያ ሥራዎች",
+   "Category_EN": "Nursery Operations",
+   "Name_AM": "ጥራጎ ማስወገድ",
+   "Name_EN": "Trash removal",
+   "Unit": "ha"
+  },
+  {
+   "Code": "N04",
+   "Category_AM": "የችግኝ ጣቢያ ሥራዎች",
+   "Category_EN": "Nursery Operations",
+   "Name_AM": "ቡና ዘር ለቀማ",
+   "Name_EN": "Picking selective seed & preparation",
+   "Unit": "kg"
+  },
+  {
+   "Code": "N05",
+   "Category_AM": "የችግኝ ጣቢያ ሥራዎች",
+   "Category_EN": "Nursery Operations",
+   "Name_AM": "ችካል ዝግጅት",
+   "Name_EN": "Peg preparation",
+   "Unit": "No."
+  },
+  {
+   "Code": "N06",
+   "Category_AM": "የችግኝ ጣቢያ ሥራዎች",
+   "Category_EN": "Nursery Operations",
+   "Name_AM": "ቅየሳና ችካል መቸከል",
+   "Name_EN": "Layout and pegging",
+   "Unit": "No."
+  },
+  {
+   "Code": "N07",
+   "Category_AM": "የችግኝ ጣቢያ ሥራዎች",
+   "Category_EN": "Nursery Operations",
+   "Name_AM": "ለም አፈር መቆለል",
+   "Name_EN": "Soil heaping",
+   "Unit": "No."
+  },
+  {
+   "Code": "N08",
+   "Category_AM": "የችግኝ ጣቢያ ሥራዎች",
+   "Category_EN": "Nursery Operations",
+   "Name_AM": "አፈር ማበጠር",
+   "Name_EN": "Soil sieving",
+   "Unit": "No."
+  },
+  {
+   "Code": "N09",
+   "Category_AM": "የችግኝ ጣቢያ ሥራዎች",
+   "Category_EN": "Nursery Operations",
+   "Name_AM": "የፖሊ መደብ ዝግጅት",
+   "Name_EN": "Polybag bed preparation",
+   "Unit": "Bed"
+  },
+  {
+   "Code": "N10",
+   "Category_AM": "የችግኝ ጣቢያ ሥራዎች",
+   "Category_EN": "Nursery Operations",
+   "Name_AM": "መደብ ድጋፍ ዝግጅትና ሥራ",
+   "Name_EN": "Bed supporting material & pegging",
+   "Unit": "Bed"
+  },
+  {
+   "Code": "N11",
+   "Category_AM": "የችግኝ ጣቢያ ሥራዎች",
+   "Category_EN": "Nursery Operations",
+   "Name_AM": "ቦይ ማዉጣት",
+   "Name_EN": "Ditch preparation",
+   "Unit": "m"
+  },
+  {
+   "Code": "N12",
+   "Category_AM": "የችግኝ ጣቢያ ሥራዎች",
+   "Category_EN": "Nursery Operations",
+   "Name_AM": "ፖሊ ቲዩብ ቆረጣ",
+   "Name_EN": "Cutting polythene tube",
+   "Unit": "No."
+  },
+  {
+   "Code": "N13",
+   "Category_AM": "የችግኝ ጣቢያ ሥራዎች",
+   "Category_EN": "Nursery Operations",
+   "Name_AM": "ፖሊቲዩብ ጥቅጣቆ",
+   "Name_EN": "Filling polythene tube",
+   "Unit": "No."
+  },
+  {
+   "Code": "N14",
+   "Category_AM": "የችግኝ ጣቢያ ሥራዎች",
+   "Category_EN": "Nursery Operations",
+   "Name_AM": "ፖሊቲዩብ ማጓጓዝ",
+   "Name_EN": "Transporting polythene tube",
+   "Unit": "No."
+  },
+  {
+   "Code": "N15",
+   "Category_AM": "የችግኝ ጣቢያ ሥራዎች",
+   "Category_EN": "Nursery Operations",
+   "Name_AM": "ፖሊቲዩብ ድርዳሮ",
+   "Name_EN": "Arranging polythene tube",
+   "Unit": "No."
+  },
+  {
+   "Code": "N16",
+   "Category_AM": "የችግኝ ጣቢያ ሥራዎች",
+   "Category_EN": "Nursery Operations",
+   "Name_AM": "ጉዝጓዝ ዝግጅት",
+   "Name_EN": "Mulch material preparation",
+   "Unit": "Load"
+  },
+  {
+   "Code": "N17",
+   "Category_AM": "የችግኝ ጣቢያ ሥራዎች",
+   "Category_EN": "Nursery Operations",
+   "Name_AM": "ቅድመ ዘር ዉኃ ማጠጣት",
+   "Name_EN": "Pre-watering seed bed",
+   "Unit": "Bed"
+  },
+  {
+   "Code": "N18",
+   "Category_AM": "የችግኝ ጣቢያ ሥራዎች",
+   "Category_EN": "Nursery Operations",
+   "Name_AM": "ፖሊቲዩብ ዘር ማፍሰስ",
+   "Name_EN": "Sowing seed in polythene tube",
+   "Unit": "No."
+  },
+  {
+   "Code": "N19",
+   "Category_AM": "የችግኝ ጣቢያ ሥራዎች",
+   "Category_EN": "Nursery Operations",
+   "Name_AM": "ጉዝጓዝ ማድረግ",
+   "Name_EN": "Mulch application",
+   "Unit": "Bed"
+  },
+  {
+   "Code": "N20",
+   "Category_AM": "የችግኝ ጣቢያ ሥራዎች",
+   "Category_EN": "Nursery Operations",
+   "Name_AM": "ለዳስ ቁሳቁስ ዝግጅት",
+   "Name_EN": "Shade material preparation",
+   "Unit": "Load"
+  },
+  {
+   "Code": "N21",
+   "Category_AM": "የችግኝ ጣቢያ ሥራዎች",
+   "Category_EN": "Nursery Operations",
+   "Name_AM": "ዳስ መሰራት",
+   "Name_EN": "Shade construction",
+   "Unit": "Bed"
+  },
+  {
+   "Code": "N22",
+   "Category_AM": "የችግኝ ጣቢያ ሥራዎች",
+   "Category_EN": "Nursery Operations",
+   "Name_AM": "ጉዝጓዝ ማንሳት",
+   "Name_EN": "Mulch removal",
+   "Unit": "Bed"
+  },
+  {
+   "Code": "N23",
+   "Category_AM": "የችግኝ ጣቢያ ሥራዎች",
+   "Category_EN": "Nursery Operations",
+   "Name_AM": "ዉኃ ማጠጣት",
+   "Name_EN": "Watering seeds",
+   "Unit": "Bed"
+  },
+  {
+   "Code": "N24",
+   "Category_AM": "የችግኝ ጣቢያ ሥራዎች",
+   "Category_EN": "Nursery Operations",
+   "Name_AM": "ችግኝ ማረም",
+   "Name_EN": "Weeding of seedlings",
+   "Unit": "Bed"
+  },
+  {
+   "Code": "N25",
+   "Category_AM": "የችግኝ ጣቢያ ሥራዎች",
+   "Category_EN": "Nursery Operations",
+   "Name_AM": "ችግኝ መኮትኮት",
+   "Name_EN": "Hoeing of seedlings",
+   "Unit": "Bed"
+  },
+  {
+   "Code": "N26",
+   "Category_AM": "የችግኝ ጣቢያ ሥራዎች",
+   "Category_EN": "Nursery Operations",
+   "Name_AM": "ዳስ ማሳሳት",
+   "Name_EN": "Thinning shade (hardening off)",
+   "Unit": "Bed"
+  },
+  {
+   "Code": "N27",
+   "Category_AM": "የችግኝ ጣቢያ ሥራዎች",
+   "Category_EN": "Nursery Operations",
+   "Name_AM": "ዳስ ማንሳት",
+   "Name_EN": "Removal of shade",
+   "Unit": "Bed"
+  },
+  {
+   "Code": "N28",
+   "Category_AM": "የችግኝ ጣቢያ ሥራዎች",
+   "Category_EN": "Nursery Operations",
+   "Name_AM": "ችግኝ መረጣ",
+   "Name_EN": "Sorting of seedlings",
+   "Unit": "No."
+  },
+  {
+   "Code": "N29",
+   "Category_AM": "የችግኝ ጣቢያ ሥራዎች",
+   "Category_EN": "Nursery Operations",
+   "Name_AM": "ችግኝ ቆጠራ",
+   "Name_EN": "Counting of seedlings",
+   "Unit": "No."
+  },
+  {
+   "Code": "Y01",
+   "Category_AM": "ወጣት ቡና እንክብካቤ ሥራዎች",
+   "Category_EN": "Young Trees Care",
+   "Name_AM": "አረም ቁጥጥር በገጀራ",
+   "Name_EN": "Manual weeding",
+   "Unit": "ha"
+  },
+  {
+   "Code": "Y02",
+   "Category_AM": "ወጣት ቡና እንክብካቤ ሥራዎች",
+   "Category_EN": "Young Trees Care",
+   "Name_AM": "ማዳበሪያ ማድረግ",
+   "Name_EN": "Fertilizer application",
+   "Unit": "No."
+  },
+  {
+   "Code": "Y03",
+   "Category_AM": "ወጣት ቡና እንክብካቤ ሥራዎች",
+   "Category_EN": "Young Trees Care",
+   "Name_AM": "ኩትኳቶ",
+   "Name_EN": "Hoeing",
+   "Unit": "No."
+  },
+  {
+   "Code": "Y04",
+   "Category_AM": "ወጣት ቡና እንክብካቤ ሥራዎች",
+   "Category_EN": "Young Trees Care",
+   "Name_AM": "ጥላ ዛፍ ቅነሳ",
+   "Name_EN": "Shade tree regulation",
+   "Unit": "ha"
+  },
+  {
+   "Code": "Y05",
+   "Category_AM": "ወጣት ቡና እንክብካቤ ሥራዎች",
+   "Category_EN": "Young Trees Care",
+   "Name_AM": "የቡና ቁመት መግታት",
+   "Name_EN": "Topping",
+   "Unit": "No."
+  },
+  {
+   "Code": "Y06",
+   "Category_AM": "ወጣት ቡና እንክብካቤ ሥራዎች",
+   "Category_EN": "Young Trees Care",
+   "Name_AM": "እርከን ሥራ",
+   "Name_EN": "Ridge construction",
+   "Unit": "m"
+  },
+  {
+   "Code": "Y07",
+   "Category_AM": "ወጣት ቡና እንክብካቤ ሥራዎች",
+   "Category_EN": "Young Trees Care",
+   "Name_AM": "ቬቲቫር ሳር ተከላ",
+   "Name_EN": "Vetiver grass planting",
+   "Unit": "m"
+  },
+  {
+   "Code": "Y08",
+   "Category_AM": "ወጣት ቡና እንክብካቤ ሥራዎች",
+   "Category_EN": "Young Trees Care",
+   "Name_AM": "የሞተ ካዳ ተከላ - ችካል ዝግጅት",
+   "Name_EN": "Infilling - Peg preparation",
+   "Unit": "No."
+  },
+  {
+   "Code": "Y09",
+   "Category_AM": "ወጣት ቡና እንክብካቤ ሥራዎች",
+   "Category_EN": "Young Trees Care",
+   "Name_AM": "የሞተ ካዳ ተከላ - ቅየሳና ችካል መቸከል",
+   "Name_EN": "Infilling - Layout & pegging",
+   "Unit": "No."
+  },
+  {
+   "Code": "Y10",
+   "Category_AM": "ወጣት ቡና እንክብካቤ ሥራዎች",
+   "Category_EN": "Young Trees Care",
+   "Name_AM": "የሞተ ካዳ ተከላ - ጉድጓድ ቁፋሮ",
+   "Name_EN": "Infilling - Holing",
+   "Unit": "No."
+  },
+  {
+   "Code": "Y11",
+   "Category_AM": "ወጣት ቡና እንክብካቤ ሥራዎች",
+   "Category_EN": "Young Trees Care",
+   "Name_AM": "የሞተ ካዳ ተከላ - አፈር ምላሶ",
+   "Name_EN": "Infilling - Refilling hole with soil",
+   "Unit": "No."
+  },
+  {
+   "Code": "Y12",
+   "Category_AM": "ወጣት ቡና እንክብካቤ ሥራዎች",
+   "Category_EN": "Young Trees Care",
+   "Name_AM": "የሞተ ካዳ ተከላ - የፖሊባግ ችግኝ ማጓጓዝ",
+   "Name_EN": "Infilling - Transporting polybag seedlings",
+   "Unit": "No."
+  },
+  {
+   "Code": "Y13",
+   "Category_AM": "ወጣት ቡና እንክብካቤ ሥራዎች",
+   "Category_EN": "Young Trees Care",
+   "Name_AM": "የሞተ ካዳ ተከላ - ችግኝ ቡና ተከላ",
+   "Name_EN": "Infilling - Planting seedlings",
+   "Unit": "No."
+  },
+  {
+   "Code": "M01",
+   "Category_AM": "እናት ቡና እንክብካቤ ሥራዎች",
+   "Category_EN": "Mature Trees Care",
+   "Name_AM": "አረም ቁጥጥር በገጀራ",
+   "Name_EN": "Manual weeding",
+   "Unit": "ha"
+  },
+  {
+   "Code": "M02",
+   "Category_AM": "እናት ቡና እንክብካቤ ሥራዎች",
+   "Category_EN": "Mature Trees Care",
+   "Name_AM": "ፀረ-አረም መድኃኒት ርጪት",
+   "Name_EN": "Herbicide spraying",
+   "Unit": "ha"
+  },
+  {
+   "Code": "M03",
+   "Category_AM": "እናት ቡና እንክብካቤ ሥራዎች",
+   "Category_EN": "Mature Trees Care",
+   "Name_AM": "ምቀሳ",
+   "Name_EN": "Pruning",
+   "Unit": "No."
+  },
+  {
+   "Code": "M04",
+   "Category_AM": "እናት ቡና እንክብካቤ ሥራዎች",
+   "Category_EN": "Mature Trees Care",
+   "Name_AM": "ምልመላና ቅጥያ ማሳሳት",
+   "Name_EN": "Handling & desuckering",
+   "Unit": "No."
+  },
+  {
+   "Code": "M05",
+   "Category_AM": "እናት ቡና እንክብካቤ ሥራዎች",
+   "Category_EN": "Mature Trees Care",
+   "Name_AM": "ጥላ ዛፍ ቅነሳ",
+   "Name_EN": "Shade tree regulation",
+   "Unit": "No."
+  },
+  {
+   "Code": "M06",
+   "Category_AM": "እናት ቡና እንክብካቤ ሥራዎች",
+   "Category_EN": "Mature Trees Care",
+   "Name_AM": "ማዳበሪያ ማድረግ",
+   "Name_EN": "Fertilizer application",
+   "Unit": "No."
+  },
+  {
+   "Code": "M07",
+   "Category_AM": "እናት ቡና እንክብካቤ ሥራዎች",
+   "Category_EN": "Mature Trees Care",
+   "Name_AM": "ማዳበሪያ ማጓጓዝ",
+   "Name_EN": "Fertilizer transport",
+   "Unit": "Qt"
+  },
+  {
+   "Code": "M08",
+   "Category_AM": "እናት ቡና እንክብካቤ ሥራዎች",
+   "Category_EN": "Mature Trees Care",
+   "Name_AM": "የወደቀ ቡና ባላ ማስደገፍ",
+   "Name_EN": "Supporting fallen coffee",
+   "Unit": "No."
+  },
+  {
+   "Code": "M09",
+   "Category_AM": "እናት ቡና እንክብካቤ ሥራዎች",
+   "Category_EN": "Mature Trees Care",
+   "Name_AM": "ሽበት ማስወገድ",
+   "Name_EN": "Lichen removal",
+   "Unit": "No."
+  },
+  {
+   "Code": "M10",
+   "Category_AM": "እናት ቡና እንክብካቤ ሥራዎች",
+   "Category_EN": "Mature Trees Care",
+   "Name_AM": "የጥበቃ ማማ ሥራ",
+   "Name_EN": "Watchman tower preparation",
+   "Unit": "No."
+  },
+  {
+   "Code": "M11",
+   "Category_AM": "እናት ቡና እንክብካቤ ሥራዎች",
+   "Category_EN": "Mature Trees Care",
+   "Name_AM": "ቡና ዛፍ ቆጠራ",
+   "Name_EN": "Counting coffee trees",
+   "Unit": "No."
+  },
+  {
+   "Code": "M12",
+   "Category_AM": "እናት ቡና እንክብካቤ ሥራዎች",
+   "Category_EN": "Mature Trees Care",
+   "Name_AM": "ቡና ምርት ትመና",
+   "Name_EN": "Coffee yield estimation",
+   "Unit": "ha"
+  },
+  {
+   "Code": "M13",
+   "Category_AM": "እናት ቡና እንክብካቤ ሥራዎች",
+   "Category_EN": "Mature Trees Care",
+   "Name_AM": "ማሳ ዙሪያ ፅዳት",
+   "Name_EN": "Farm border clearing",
+   "Unit": "m"
+  },
+  {
+   "Code": "M14",
+   "Category_AM": "እናት ቡና እንክብካቤ ሥራዎች",
+   "Category_EN": "Mature Trees Care",
+   "Name_AM": "የሞተ ካዳ ተከላ - ችካል ዝግጅት",
+   "Name_EN": "Infilling - Peg preparation",
+   "Unit": "No."
+  },
+  {
+   "Code": "M15",
+   "Category_AM": "እናት ቡና እንክብካቤ ሥራዎች",
+   "Category_EN": "Mature Trees Care",
+   "Name_AM": "የሞተ ካዳ ተከላ - ቅየሳና ችካል መቸከል",
+   "Name_EN": "Infilling - Layout & pegging",
+   "Unit": "No."
+  },
+  {
+   "Code": "M16",
+   "Category_AM": "እናት ቡና እንክብካቤ ሥራዎች",
+   "Category_EN": "Mature Trees Care",
+   "Name_AM": "የሞተ ካዳ ተከላ - ጉድጓድ ቁፋሮ",
+   "Name_EN": "Infilling - Holing",
+   "Unit": "No."
+  },
+  {
+   "Code": "M17",
+   "Category_AM": "እናት ቡና እንክብካቤ ሥራዎች",
+   "Category_EN": "Mature Trees Care",
+   "Name_AM": "የሞተ ካዳ ተከላ - አፈር ምላሶ",
+   "Name_EN": "Infilling - Refilling hole with soil",
+   "Unit": "No."
+  },
+  {
+   "Code": "M18",
+   "Category_AM": "እናት ቡና እንክብካቤ ሥራዎች",
+   "Category_EN": "Mature Trees Care",
+   "Name_AM": "የሞተ ካዳ ተከላ - የፖሊባግ ችግኝ ማጓጓዝ",
+   "Name_EN": "Infilling - Transporting polybag seedlings",
+   "Unit": "No."
+  },
+  {
+   "Code": "M19",
+   "Category_AM": "እናት ቡና እንክብካቤ ሥራዎች",
+   "Category_EN": "Mature Trees Care",
+   "Name_AM": "የሞተ ካዳ ተከላ - ችግኝ ቡና መትከል",
+   "Name_EN": "Infilling - Planting coffee seedlings",
+   "Unit": "No."
+  },
+  {
+   "Code": "L01",
+   "Category_AM": "አዲስ ልማት መሬት ዝግጅት",
+   "Category_EN": "New Land Clearing",
+   "Name_AM": "መሬት ምንጣሮ",
+   "Name_EN": "Land clearing",
+   "Unit": "ha"
+  },
+  {
+   "Code": "L02",
+   "Category_AM": "አዲስ ልማት መሬት ዝግጅት",
+   "Category_EN": "New Land Clearing",
+   "Name_AM": "ዛፍ መጣል",
+   "Name_EN": "Tree felling",
+   "Unit": "ha"
+  },
+  {
+   "Code": "L03",
+   "Category_AM": "አዲስ ልማት መሬት ዝግጅት",
+   "Category_EN": "New Land Clearing",
+   "Name_AM": "ጥራጎ ማስወገድ",
+   "Name_EN": "Trash removal",
+   "Unit": "ha"
+  },
+  {
+   "Code": "L04",
+   "Category_AM": "አዲስ ልማት መሬት ዝግጅት",
+   "Category_EN": "New Land Clearing",
+   "Name_AM": "ጉቶ ነቀላ",
+   "Name_EN": "Uprooting stumps",
+   "Unit": "No."
+  },
+  {
+   "Code": "P01",
+   "Category_AM": "ጉድጓድ ቁፋሮና ተከላ ሥራ",
+   "Category_EN": "Holing and Planting",
+   "Name_AM": "ችካል ዝግጅት",
+   "Name_EN": "Peg preparation",
+   "Unit": "No."
+  },
+  {
+   "Code": "P02",
+   "Category_AM": "ጉድጓድ ቁፋሮና ተከላ ሥራ",
+   "Category_EN": "Holing and Planting",
+   "Name_AM": "ቅየሳና ችካል መቸከል",
+   "Name_EN": "Layout and pegging",
+   "Unit": "No."
+  },
+  {
+   "Code": "P03",
+   "Category_AM": "ጉድጓድ ቁፋሮና ተከላ ሥራ",
+   "Category_EN": "Holing and Planting",
+   "Name_AM": "ጉድጓድ ቁፋሮ",
+   "Name_EN": "Holing",
+   "Unit": "No."
+  },
+  {
+   "Code": "P04",
+   "Category_AM": "ጉድጓድ ቁፋሮና ተከላ ሥራ",
+   "Category_EN": "Holing and Planting",
+   "Name_AM": "አፈር ምላሶ",
+   "Name_EN": "Refilling hole with soil",
+   "Unit": "No."
+  },
+  {
+   "Code": "P05",
+   "Category_AM": "ጉድጓድ ቁፋሮና ተከላ ሥራ",
+   "Category_EN": "Holing and Planting",
+   "Name_AM": "የፖሊባግ ችግኝ ማጓጓዝ",
+   "Name_EN": "Transporting polybag seedlings",
+   "Unit": "No."
+  },
+  {
+   "Code": "P06",
+   "Category_AM": "ጉድጓድ ቁፋሮና ተከላ ሥራ",
+   "Category_EN": "Holing and Planting",
+   "Name_AM": "ችግኝ ቡና ተከላ",
+   "Name_EN": "Planting seedlings",
+   "Unit": "No."
+  },
+  {
+   "Code": "C01",
+   "Category_AM": "የቡና ለቀማ ሥራዎች",
+   "Category_EN": "Coffee Picking Operations",
+   "Name_AM": "ቡና ማስጫ ማቴሪያል ዝግጅት",
+   "Name_EN": "Drying bed material preparation",
+   "Unit": "No."
+  },
+  {
+   "Code": "C02",
+   "Category_AM": "የቡና ለቀማ ሥራዎች",
+   "Category_EN": "Coffee Picking Operations",
+   "Name_AM": "ቡና ማስጫ አልጋ ሥራ",
+   "Name_EN": "Drying bed preparation",
+   "Unit": "Bed"
+  },
+  {
+   "Code": "C03",
+   "Category_AM": "የቡና ለቀማ ሥራዎች",
+   "Category_EN": "Coffee Picking Operations",
+   "Name_AM": "ቀይ ቡና ለቀማ",
+   "Name_EN": "Picking red cherry",
+   "Unit": "kg"
+  },
+  {
+   "Code": "C04",
+   "Category_AM": "የቡና ለቀማ ሥራዎች",
+   "Category_EN": "Coffee Picking Operations",
+   "Name_AM": "ጀንፈል ቡና ለቀማ",
+   "Name_EN": "Picking dry cherry (jenfel)",
+   "Unit": "kg"
+  },
+  {
+   "Code": "C05",
+   "Category_AM": "የቡና ለቀማ ሥራዎች",
+   "Category_EN": "Coffee Picking Operations",
+   "Name_AM": "ቡና ማስጣጣት",
+   "Name_EN": "Drying cherry",
+   "Unit": "kg"
+  },
+  {
+   "Code": "W01",
+   "Category_AM": "የምርት ዝግጅት ሥራዎች",
+   "Category_EN": "Product Preparation",
+   "Name_AM": "ደረቅ ቡና መመዘንና መደርደር",
+   "Name_EN": "Weighing & arranging dry coffee",
+   "Unit": "kg"
+  },
+  {
+   "Code": "W02",
+   "Category_AM": "የምርት ዝግጅት ሥራዎች",
+   "Category_EN": "Product Preparation",
+   "Name_AM": "ደረቅ ቡና መጫን ከእርሻ",
+   "Name_EN": "Loading dry coffee from farm",
+   "Unit": "kg"
+  },
+  {
+   "Code": "W03",
+   "Category_AM": "የምርት ዝግጅት ሥራዎች",
+   "Category_EN": "Product Preparation",
+   "Name_AM": "ደረቅ ቡና ማጓጓዣ መኪና ኪራይ",
+   "Name_EN": "Transporting dry coffee (vehicle rent)",
+   "Unit": "Trip"
+  },
+  {
+   "Code": "W04",
+   "Category_AM": "የምርት ዝግጅት ሥራዎች",
+   "Category_EN": "Product Preparation",
+   "Name_AM": "ደረቅ ቡና መቀሸሪያ ቤት ማዉረድ",
+   "Name_EN": "Unloading at hulling station",
+   "Unit": "kg"
+  },
+  {
+   "Code": "W05",
+   "Category_AM": "የምርት ዝግጅት ሥራዎች",
+   "Category_EN": "Product Preparation",
+   "Name_AM": "ደረቅ ቡና ማስቀሸር የማሽን ወጪ",
+   "Name_EN": "Hulling - machine cost (incl. VAT)",
+   "Unit": "kg"
+  },
+  {
+   "Code": "W06",
+   "Category_AM": "የምርት ዝግጅት ሥራዎች",
+   "Category_EN": "Product Preparation",
+   "Name_AM": "ደረቅ ቡና ማስቀሸር የሠራተኛ ወጪ",
+   "Name_EN": "Hulling - labor cost",
+   "Unit": "kg"
+  },
+  {
+   "Code": "W07",
+   "Category_AM": "የምርት ዝግጅት ሥራዎች",
+   "Category_EN": "Product Preparation",
+   "Name_AM": "ንፁህ ቡና ለማዕከላዊ ገበያ መላክ መኪና ኪራይ",
+   "Name_EN": "Transporting clean coffee to A.A",
+   "Unit": "Trip"
+  },
+  {
+   "Code": "W08",
+   "Category_AM": "የምርት ዝግጅት ሥራዎች",
+   "Category_EN": "Product Preparation",
+   "Name_AM": "የጥበቃ ማማ ሥራ",
+   "Name_EN": "Guard tower preparation",
+   "Unit": "No."
+  },
+  {
+   "Code": "W09",
+   "Category_AM": "የምርት ዝግጅት ሥራዎች",
+   "Category_EN": "Product Preparation",
+   "Name_AM": "ቡና ማስጫ አልጋ ጥገና",
+   "Name_EN": "Drying bed repair",
+   "Unit": "Bed"
+  },
+  {
+   "Code": "W10",
+   "Category_AM": "የምርት ዝግጅት ሥራዎች",
+   "Category_EN": "Product Preparation",
+   "Name_AM": "ቡና ማስጫ አልጋ ማፍረስ",
+   "Name_EN": "Removal of drying bed",
+   "Unit": "Bed"
+  },
+  {
+   "Code": "W11",
+   "Category_AM": "የምርት ዝግጅት ሥራዎች",
+   "Category_EN": "Product Preparation",
+   "Name_AM": "ልዩ ልዩ ወጪዎች",
+   "Name_EN": "Contingency",
+   "Unit": "Birr"
+  },
+  {
+   "Code": "S01",
+   "Category_AM": "ሽያጭና ኤክስፖርት",
+   "Category_EN": "Sales and Export",
+   "Name_AM": "ሽያጭና ኤክስፖርት",
+   "Name_EN": "Sales and export costs",
+   "Unit": "Birr"
+  }
+ ],
+ "ExpenseCategories": [
+  "Permanent employee salary / ቋሚ ሠራተኛ",
+  "Contract employee salary / ኮንትራት ሠራተኛ",
+  "Pension 11% / ጡረታ",
+  "Petty cash / ጥቃቅን ወጪ",
+  "Per diem / አበል",
+  "Worker transport / የሠራተኛ ትራንስፖርት",
+  "Fuel & oil / ነዳጅ እና ዘይት",
+  "Vehicle maintenance & parts / የመኪና ጥገና",
+  "Other / ሌላ"
+ ]
+}
