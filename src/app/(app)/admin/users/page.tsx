@@ -25,12 +25,12 @@ export default async function UsersPage() {
             {users.map((u) => (
               <tr key={u.id} style={u.active ? undefined : { opacity: 0.55 }}>
                 <td><b>{u.name}</b>{u.id === me.id && <span className="muted"> (you)</span>}</td>
-                <td>{u.role}</td>
-                <td>{farmLabel(farms, u.farm_id)}</td>
-                <td>{u.reports}</td>
-                <td>{u.last ?? '—'}</td>
-                <td>{u.active ? 'Active' : 'Inactive'}</td>
-                <td><UserRowActions id={u.id} active={!!u.active} isMe={u.id === me.id} /></td>
+                <td data-label="Role">{u.role}</td>
+                <td data-label="Farm">{farmLabel(farms, u.farm_id)}</td>
+                <td data-label="Reports">{u.reports}</td>
+                <td data-label="Last report">{u.last ?? '—'}</td>
+                <td data-label="Status">{u.active ? 'Active' : 'Inactive'}</td>
+                <td data-label="Actions"><UserRowActions id={u.id} active={!!u.active} isMe={u.id === me.id} /></td>
               </tr>
             ))}
           </tbody>

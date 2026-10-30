@@ -1,6 +1,9 @@
+/* Colours taken from the B-Agro Coffee logo (bagrocoffee.com): teal + sunrise yellow/orange.
+   The variable names say "green" for history; they hold the brand teal. */
 :root {
-  --green: #2f6b3a; --green-d: #234f2b; --green-l: #e7f1e6; --cherry: #b3261e;
-  --ink: #1d2420; --muted: #5d6b62; --line: #d6ddd7; --bg: #f4f6f3; --card: #fff;
+  --green: #0d7985; --green-d: #0a5d66; --green-l: #e4f2f3; --cherry: #b3261e;
+  --sun: #fcdb69; --sun-d: #f6b02b;
+  --ink: #1b2526; --muted: #5a6b6d; --line: #d3dfe0; --bg: #f3f7f7; --card: #fff;
   --amber: #a86a00; --radius: 12px;
 }
 * { box-sizing: border-box; }
@@ -9,17 +12,31 @@ html, body { margin: 0; background: var(--bg); color: var(--ink);
 a { color: var(--green); }
 
 /* Header + navigation */
-header.top { position: sticky; top: 0; z-index: 5; background: var(--green); color: #fff; }
-header.top .bar { display: flex; align-items: center; gap: 10px; padding: 10px 14px; max-width: 1100px; margin: 0 auto; }
-header.top h1 { font-size: 16px; margin: 0; flex: 1; }
-header.top h1 small { font-weight: 400; opacity: .8; }
-header.top .who { font-size: 12px; text-align: right; opacity: .95; }
-header.top button { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.5);
+header.top { position: sticky; top: 0; z-index: 5; background: #fff; color: var(--ink); box-shadow: 0 1px 0 var(--line); }
+header.top .bar { display: flex; align-items: center; gap: 10px; padding: 8px 14px; max-width: 1100px; margin: 0 auto; }
+.brand { display: flex; align-items: center; gap: 10px; flex: 1; min-width: 0; text-decoration: none; color: var(--green-d); }
+.brand img { display: block; height: 44px; width: auto; }
+.brand-name { font-weight: 700; font-size: 15px; line-height: 1.15; border-left: 2px solid var(--sun); padding-left: 10px; white-space: nowrap; }
+.brand-name small { display: block; font-weight: 400; font-size: 12px; color: var(--muted); }
+@media (max-width: 480px) { .brand-name { display: none; } }
+header.top .who { font-size: 12px; text-align: right; color: var(--muted); }
+header.top button { background: #fff; color: var(--green); border: 1px solid var(--green);
   border-radius: 8px; padding: 4px 8px; font-size: 12px; cursor: pointer; }
-nav.tabs { background: var(--green-d); }
+nav.tabs { background: var(--green); }
 nav.tabs .inner { display: flex; gap: 2px; overflow-x: auto; max-width: 1100px; margin: 0 auto; padding: 0 8px; }
-nav.tabs a { color: #dfeedd; text-decoration: none; padding: 9px 12px; font-size: 14px; white-space: nowrap; border-bottom: 3px solid transparent; }
-nav.tabs a.on { color: #fff; font-weight: 600; border-bottom-color: #9fd6a5; }
+nav.tabs a { color: #d6eef0; text-decoration: none; padding: 9px 12px; font-size: 14px; white-space: nowrap; border-bottom: 3px solid transparent; }
+nav.tabs a.on { color: #fff; font-weight: 600; border-bottom-color: var(--sun); }
+/* Phones: wrap the menu onto two rows instead of hiding tabs off-screen. */
+@media (max-width: 640px) {
+  nav.tabs .inner { flex-wrap: wrap; overflow-x: visible; padding: 0 4px; gap: 0; }
+  nav.tabs a { padding: 8px 9px; font-size: 13px; }
+  header.top .bar { padding: 6px 10px; gap: 8px; }
+  .brand img { height: 38px; }
+  header.top .who { font-size: 11px; line-height: 1.3; }
+}
+@media (max-width: 400px) {
+  nav.tabs a { padding: 7px 6px; font-size: 12.5px; }
+}
 main { max-width: 1100px; margin: 0 auto; padding: 14px 12px 60px; }
 main.narrow { max-width: 760px; }
 
@@ -28,13 +45,16 @@ main.narrow { max-width: 760px; }
 h2 { font-size: 18px; margin: 0 0 10px; }
 h2 small, label small { display: block; font-weight: 400; color: var(--muted); font-size: 12px; }
 label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 10px; }
-input, select, textarea { width: 100%; margin-top: 4px; font: inherit; padding: 10px;
+/* 16px text in fields stops iPhones zooming the page when a field is tapped. */
+input, select, textarea { width: 100%; margin-top: 4px; font: inherit; font-size: 16px; padding: 10px;
   border: 1px solid #b9c4bc; border-radius: 8px; background: #fff; color: var(--ink); }
 input[type=checkbox] { width: auto; margin: 0 6px 0 0; }
 input:focus, select:focus, textarea:focus { outline: 2px solid var(--green); border-color: var(--green); }
-.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
-.grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+/* align-items: end keeps the input boxes in a row level when one label has an extra line. */
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; align-items: end; }
+.grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; align-items: end; }
+.grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; align-items: end; }
+.grid2 > *, .grid3 > *, .grid4 > * { min-width: 0; }
 @media (max-width: 640px) { .grid4 { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 420px) { .grid3 { grid-template-columns: 1fr 1fr; } }
 .btn { display: inline-block; border: 0; border-radius: 10px; padding: 12px 16px; font: inherit;
@@ -86,6 +106,20 @@ table.grid tr.total td { font-weight: 700; background: var(--green-l); border-to
 table.plain { border-collapse: collapse; width: 100%; font-size: 13.5px; }
 table.plain th, table.plain td { text-align: left; padding: 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
 table.plain th { font-size: 12px; color: var(--muted); font-weight: 600; }
+/* Phones: each table row becomes a small card, with the column name before each value. */
+@media (max-width: 640px) {
+  table.plain thead { display: none; }
+  table.plain, table.plain tbody, table.plain tr, table.plain td { display: block; width: 100%; }
+  table.plain tr { border-bottom: 1px solid var(--line); padding: 8px 0; }
+  table.plain td { border: 0; padding: 3px 0; display: flex; gap: 10px; justify-content: space-between; align-items: center; }
+  table.plain td::before { content: attr(data-label); color: var(--muted); font-size: 12px; flex-shrink: 0; }
+  table.plain td:first-child { font-size: 15px; }
+  table.plain td:first-child::before { content: none; }
+  table.plain td[data-label="Actions"] { display: block; }
+  table.plain td[data-label="Actions"]::before { display: block; margin-bottom: 4px; }
+  table.plain td .review-form input { flex: 1 1 100%; max-width: none !important; }
+}
+.pre-line { white-space: pre-line; }
 
 /* Report cards + status */
 .status { display: inline-block; font-size: 11px; font-weight: 700; border-radius: 10px; padding: 2px 8px; white-space: nowrap; }
@@ -103,3 +137,8 @@ table.plain th { font-size: 12px; color: var(--muted); font-weight: 600; }
 #toast.err { background: var(--cherry); }
 #toast.ok { background: var(--green-d); }
 .login { max-width: 380px; margin: 40px auto; }
+.demo-login { display: flex; width: 100%; justify-content: space-between; align-items: center; gap: 8px;
+  background: #fff8e1; border: 1px dashed var(--sun-d); border-radius: 10px; padding: 10px 12px;
+  font: inherit; font-size: 14px; color: var(--ink); cursor: pointer; text-align: left; }
+.demo-login:hover, .demo-login:focus-visible { background: #fff1c2; outline: 2px solid var(--sun-d); }
+.demo-login small { color: var(--muted); font-size: 12px; white-space: nowrap; }

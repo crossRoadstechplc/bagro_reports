@@ -2,6 +2,7 @@ import { requireUser } from '@/lib/auth';
 import { farmLabel, getFarms } from '@/lib/config';
 import { logoutAction } from '../actions';
 import NavLinks from '@/components/NavLinks';
+import Brand from '@/components/Brand';
 
 export default async function AppLayout({ children }: { children: React.ReactNode }) {
   const user = await requireUser();
@@ -19,7 +20,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
     <>
       <header className="top">
         <div className="bar">
-          <h1>B Agro <small>· Field Reports / የመስክ ሪፖርት</small></h1>
+          <Brand />
           <div className="who">
             {user.name}<br />{user.role} · {farmLabel(await getFarms(), user.farmId)}
           </div>

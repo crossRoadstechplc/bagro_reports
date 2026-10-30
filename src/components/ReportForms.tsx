@@ -126,8 +126,7 @@ export default function ReportForms({ config, user, edit }: { config: AppConfig;
     window.addEventListener('online', onLine);
     const t = window.setInterval(flush, 60000);
     return () => { window.removeEventListener('online', onLine); window.clearInterval(t); };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [K, flush]);
+  }, [K, flush, edit]);
 
   useEffect(() => { if (loaded && !edit) save(K + 'drafts', drafts); }, [K, drafts, loaded, edit]);
   useEffect(() => { if (loaded && !edit) save(K + 'tab', tab); }, [K, tab, loaded, edit]);

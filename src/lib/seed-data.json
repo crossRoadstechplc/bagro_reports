@@ -106,6 +106,10 @@
   },
   {
    "FarmID": "CHETU",
+   "Block": "Block B1"
+  },
+  {
+   "FarmID": "CHETU",
    "Block": "Block C"
   },
   {
@@ -118,35 +122,55 @@
   },
   {
    "FarmID": "CHETU",
+   "Block": "Block F"
+  },
+  {
+   "FarmID": "CHETU",
+   "Block": "Block G"
+  },
+  {
+   "FarmID": "CHETU",
    "Block": "Block Less & Admin"
   },
   {
    "FarmID": "EPHRATA",
-   "Block": "Block 1",
-   "AreaHa": 34
+   "Block": "Block A"
   },
   {
    "FarmID": "EPHRATA",
-   "Block": "Block 2",
-   "AreaHa": 32
+   "Block": "Block B"
   },
   {
    "FarmID": "EPHRATA",
-   "Block": "Block 3",
-   "AreaHa": 10.8
+   "Block": "Block C"
   },
   {
    "FarmID": "EPHRATA",
-   "Block": "Block 4",
-   "AreaHa": 20
+   "Block": "Block D"
   },
   {
    "FarmID": "EPHRATA",
-   "Block": "Block 5"
+   "Block": "Block E"
   },
   {
    "FarmID": "EPHRATA",
-   "Block": "Block 6"
+   "Block": "Block F"
+  },
+  {
+   "FarmID": "EPHRATA",
+   "Block": "Block G"
+  },
+  {
+   "FarmID": "EPHRATA",
+   "Block": "Block H"
+  },
+  {
+   "FarmID": "EPHRATA",
+   "Block": "Block I"
+  },
+  {
+   "FarmID": "EPHRATA",
+   "Block": "Block J"
   },
   {
    "FarmID": "EPHRATA",
@@ -187,6 +211,18 @@
   {
    "FarmID": "SHAKIS",
    "Block": "Block D"
+  },
+  {
+   "FarmID": "SHAKIS",
+   "Block": "Block E"
+  },
+  {
+   "FarmID": "SHAKIS",
+   "Block": "Block F"
+  },
+  {
+   "FarmID": "SHAKIS",
+   "Block": "Block G"
   },
   {
    "FarmID": "SHAKIS",

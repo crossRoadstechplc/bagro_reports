@@ -1,4 +1,5 @@
 import 'server-only';
+import { canAmend } from './auth';
 import { ADDIS, db, EXPENSE_CATEGORIES, type Tx } from './db';
 import { todayAddis } from './ethiopian';
 import {
@@ -17,8 +18,6 @@ function num(v: NumIn, label: string): number | null {
   return n;
 }
 const text = (v: unknown, max: number) => String(v ?? '').trim().slice(0, max);
-
-const canAmend = (u: SessionUser) => u.role === 'Admin' || u.role === 'Office';
 
 /* ------------------------------------------------------------------ */
 /* Validation shared by new reports and amendments                     */

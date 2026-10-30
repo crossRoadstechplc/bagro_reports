@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: 'Daily farm reporting for B Agro',
 };
 
-export const viewport: Viewport = { width: 'device-width', initialScale: 1, themeColor: '#2f6b3a' };
+export const viewport: Viewport = { width: 'device-width', initialScale: 1, themeColor: '#0d7985' };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

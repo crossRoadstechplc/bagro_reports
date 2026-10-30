@@ -68,6 +68,24 @@ database round trips stay short. If you move the database, change the region to 
 Schema changes: add a new file `db/migrations/00N_name.sql` and run `npm run db:migrate` locally
 (it uses `DIRECT_URL`). Already-applied files are skipped.
 
+### Farm blocks
+
+| Farm | Blocks |
+|---|---|
+| Gawi | A–F (6) |
+| Telli | A–E (5) |
+| Chetu | A, B, B1, C, D, E, F, G (8) |
+| Ephrata | A–J (10) |
+| Kamisse | A–D (4) |
+| Shakis | A–G (7) |
+
+Each farm also has **Block Less & Admin** for costs that don't belong to one block.
+
+To change blocks, edit the `Blocks` list in `src/lib/seed-data.json`, then run
+`npm run db:sync-blocks -- --dry` to preview and `npm run db:sync-blocks` to apply. Blocks that
+already have reports are never deleted; the script lists them so you can rename or merge them by hand.
+Hectares can be added as `"AreaHa": 34` on a block in the list, or in Supabase's Table Editor.
+
 ## Database notes
 
 - **Security:** row-level security is on for every table with no policies, so Supabase's public API keys

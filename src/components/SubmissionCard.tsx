@@ -45,7 +45,7 @@ export default function SubmissionCard({ s, lines, children }: { s: SubmissionRo
           </table>
         </div>
         {s.remarks && <p className="muted">Remarks: {s.remarks}</p>}
-        {s.weighers && <p className="muted">Weighed by: {s.weighers}</p>}
+        {s.weighers && <p className="muted pre-line">Weighed by:{'\n'}{s.weighers}</p>}
         <p className="muted">Sent {s.createdAt} (Addis time)</p>
       </details>
       {children}

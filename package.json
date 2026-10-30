@@ -8,7 +8,8 @@
     "start": "next start",
     "typecheck": "tsc --noEmit",
     "db:migrate": "node --env-file-if-exists=.env --env-file-if-exists=.env.local scripts/migrate.mjs",
-    "db:seed": "node --env-file-if-exists=.env --env-file-if-exists=.env.local scripts/seed.mjs"
+    "db:seed": "node --env-file-if-exists=.env --env-file-if-exists=.env.local scripts/seed.mjs",
+    "db:sync-blocks": "node --env-file-if-exists=.env --env-file-if-exists=.env.local scripts/sync-blocks.mjs"
   },
   "dependencies": {
     "next": "^16.4.3",
