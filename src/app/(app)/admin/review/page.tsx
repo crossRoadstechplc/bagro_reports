@@ -23,12 +23,14 @@ export default async function ReviewPage(props: PageProps<'/admin/review'>) {
     if (user.farmId) q.delete('farm');
     return q.toString();
   };
-  const statusTabs: [string, string][] = [['Submitted', 'Waiting'], ['Verified', 'Verified'], ['Approved', 'Approved'], ['Rejected', 'Rejected'], ['All', 'All']];
+  const statusTabs: [string, string][] = [['Submitted', 'Waiting'], ['Approved', 'Approved'], ['Rejected', 'Rejected'], ['All', 'All']];
 
   return (
     <main>
       <h2>Review &amp; approve <small>
-        {user.role === 'Supervisor' ? 'Verify or reject reports from your farm. Admins give final approval.' : 'Supervisors verify, admins approve. Rejected reports are left out of the dashboard.'}
+        {user.role === 'Supervisor'
+          ? "Approve or reject reports sent by your farm's reporters. Rejected reports are left out of the dashboard."
+          : "Reports from reporters wait here for their farm's supervisor (or you) to approve. Reports entered by office staff, supervisors and admins are approved automatically."}
       </small></h2>
       <FilterBar action="/admin/review" farms={farms} lockedFarm={user.farmId ? farmLabel(farms, user.farmId) : null}
         farm={p.farm} mode={p.mode} ey={p.ey} em={p.em} from={p.from} to={p.to} hidden={{ kind, status }} />

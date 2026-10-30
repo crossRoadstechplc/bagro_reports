@@ -20,11 +20,11 @@ export default async function AllReports(props: PageProps<'/reports'>) {
   const params = { farm: p.farm, mode: p.mode, ey: String(p.ey), em: String(p.em), from: p.from, to: p.to, kind, status };
   const qs = (extra: Record<string, string>) => new URLSearchParams({ ...params, ...extra }).toString();
   const back = encodeURIComponent(`/reports?${qs({})}`);
-  const statusTabs: [string, string][] = [['All', 'All'], ['Submitted', 'Waiting review'], ['Verified', 'Verified'], ['Approved', 'Approved'], ['Rejected', 'Rejected']];
+  const statusTabs: [string, string][] = [['All', 'All'], ['Submitted', 'Waiting review'], ['Approved', 'Approved'], ['Rejected', 'Rejected']];
 
   return (
     <main>
-      <h2>All reports <small>Reports from every farm. Amending a report sends it back for review, and the previous version is kept.</small></h2>
+      <h2>All reports <small>Reports from every farm. Reports you enter or amend are approved automatically under your name, and the previous version of an amended report is kept.</small></h2>
       <FilterBar action="/reports" farms={await getFarms()} lockedFarm={null}
         farm={p.farm} mode={p.mode} ey={p.ey} em={p.em} from={p.from} to={p.to} hidden={{ kind, status }} />
       <div className="seg">

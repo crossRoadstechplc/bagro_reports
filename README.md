@@ -30,12 +30,18 @@ Open http://localhost:3000.
 
 ### Roles
 
-| Role | Farms | Submit reports | Amend reports | Dashboard + review | Approve | Manage users |
+| Role | Farms | Submit reports | Their reports are… | Amend reports | Dashboard + review | Manage users |
 |---|---|---|---|---|---|---|
-| Reporter | own farm | ✓ | – | – | – | – |
-| Office | all farms | ✓ | ✓ (any farm) | – | – | – |
-| Supervisor | own farm | ✓ | – | ✓ (verify / reject) | – | – |
-| Admin | all farms | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Reporter | own farm | ✓ | waiting for the farm's supervisor | – | – | – |
+| Office | all farms | ✓ | approved automatically | ✓ (any farm, auto-approved) | – | – |
+| Supervisor | own farm | ✓ | approved automatically | – | ✓ approve / reject own farm | – |
+| Admin | all farms | ✓ | approved automatically | ✓ (auto-approved) | ✓ approve / reject / reopen | ✓ |
+
+**Who did what is always recorded.** Every report stores who **entered** it, who **approved** it
+(for automatic approvals, the person who entered or amended it, with the note "Auto-approved: entered
+by office" or similar), and who last **amended** it, with every previous version in `submission_edits`.
+Give each person their own account so these names are meaningful. The shared `Office Clerk` account is
+for testing only.
 
 ## What each person sees
 
@@ -46,12 +52,13 @@ Open http://localhost:3000.
 
   If the signal drops, reports wait on the phone and send themselves later. A report sent twice is saved once.
 - **My reports**: the reports you sent, with status and any rejection note.
-- **All reports** (Office, Admin): every farm's reports, filterable, with **✏️ Amend**. Amending sends the
-  report back for review, and the old version is kept in `submission_edits`.
+- **All reports** (Office, Admin): every farm's reports, filterable, with **✏️ Amend**. An amendment is
+  approved under the amender's name, and the old version is kept in `submission_edits`.
 - **Dashboard** (Supervisor, Admin): choose a farm (or all farms) and an Ethiopian month.
   - Operations summary in the Chetu Excel layout, coffee harvest with running total, expenses by type.
   - **Download CSV** opens in Excel.
-- **Review** (Supervisor, Admin): verify, approve, reject with a reason, or reopen.
+- **Review** (Supervisor, Admin): reporters' reports waiting for approval. Approve, or reject with a reason.
+  Admins can also reopen an approved or rejected report.
 - **Users** (Admin): add employees, set PINs, deactivate.
 
 ## Deploy on Vercel

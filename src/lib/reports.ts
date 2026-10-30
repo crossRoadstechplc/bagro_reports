@@ -88,32 +88,44 @@ const LINE_TABLE: Record<Kind, string> = { ops: 'ops_lines', harvest: 'harvest_l
 /* Saving a new report                                                 */
 /* ------------------------------------------------------------------ */
 
-export async function createSubmission(user: SessionUser, p: ReportPayload): Promise<{ id: number; duplicate: boolean }> {
+/**
+ * Approval rules:
+ *  - Reporter: the report waits for the farm's supervisor (or an admin) to approve it.
+ *  - Office, Admin and Supervisor: what they enter or amend is approved straight away,
+ *    with their name recorded as the approver (reviewed_by) and a note saying so.
+ */
+export const autoApproves = (u: SessionUser) => u.role !== 'Reporter';
+const autoNote = (u: SessionUser, action: 'entered' | 'amended') => `Auto-approved: ${action} by ${u.role.toLowerCase()}`;
+
+export async function createSubmission(user: SessionUser, p: ReportPayload): Promise<{ id: number; duplicate: boolean; status: Status }> {
   const sql = db();
   if (!p || typeof p.clientId !== 'string' || !p.clientId || p.clientId.length > 64) throw new InputError('Missing report id');
   await checkHeader(user, p);
 
   // The phone may send the same report twice (weak signal). Save it once.
-  const findExisting = async () => (await sql<{ id: number }[]>`SELECT id FROM submissions WHERE client_id = ${p.clientId}`)[0];
+  const findExisting = async () => (await sql<{ id: number; status: Status }[]>`SELECT id, status FROM submissions WHERE client_id = ${p.clientId}`)[0];
   const existing = await findExisting();
-  if (existing) return { id: existing.id, duplicate: true };
+  if (existing) return { id: existing.id, duplicate: true, status: existing.status };
 
   const insertLines = await buildLines(p);
+  const auto = autoApproves(user);
+  const status: Status = auto ? 'Approved' : 'Submitted';
   try {
     const id = await sql.begin(async (tx) => {
       const [s] = await tx<{ id: number }[]>`
-        INSERT INTO submissions (client_id, kind, report_date, farm_id, user_id, remarks, weighers)
-        VALUES (${p.clientId}, ${p.kind}, ${p.date}, ${p.farm}, ${user.id}, ${text(p.remarks, 2000)}, ${text(p.weighers, 1000)})
+        INSERT INTO submissions (client_id, kind, report_date, farm_id, user_id, remarks, weighers, status, reviewed_by, reviewed_at, review_note)
+        VALUES (${p.clientId}, ${p.kind}, ${p.date}, ${p.farm}, ${user.id}, ${text(p.remarks, 2000)}, ${text(p.weighers, 1000)},
+          ${status}, ${auto ? user.id : null}, ${auto ? sql`now()` : null}, ${auto ? autoNote(user, 'entered') : ''})
         RETURNING id`;
       await insertLines(tx, s.id);
       return s.id;
     });
-    return { id, duplicate: false };
+    return { id, duplicate: false, status };
   } catch (e) {
     // Two copies of the same report arrived at the same moment: the other one won.
     if ((e as { code?: string }).code === '23505') {
       const again = await findExisting();
-      if (again) return { id: again.id, duplicate: true };
+      if (again) return { id: again.id, duplicate: true, status: again.status };
     }
     throw e;
   }
@@ -149,10 +161,10 @@ export async function getSubmissionForEdit(user: SessionUser, id: number): Promi
 }
 
 /**
- * Replaces a report's date, farm, remarks and lines. The old version is kept in submission_edits,
- * and the report goes back to "Submitted" so it is reviewed again.
+ * Replaces a report's date, farm, remarks and lines. The old version is kept in submission_edits.
+ * Amended by office staff: approved under their name. Amended by an admin: back to "Submitted" for review.
  */
-export async function updateSubmission(user: SessionUser, id: number, p: ReportPayload) {
+export async function updateSubmission(user: SessionUser, id: number, p: ReportPayload): Promise<{ status: Status }> {
   if (!canAmend(user)) throw new InputError('Only office staff and admins can amend reports');
   if (!Number.isInteger(id)) throw new InputError('Report not found');
   const sql = db();
@@ -162,6 +174,8 @@ export async function updateSubmission(user: SessionUser, id: number, p: ReportP
   await checkHeader(user, p);
   const insertLines = await buildLines(p);
   const table = LINE_TABLE[before.kind as Kind];
+  const auto = autoApproves(user);
+  const status: Status = auto ? 'Approved' : 'Submitted';
 
   await sql.begin(async (tx) => {
     const oldLines = await tx`SELECT * FROM ${tx(table)} WHERE submission_id = ${id} ORDER BY id`;
@@ -171,10 +185,12 @@ export async function updateSubmission(user: SessionUser, id: number, p: ReportP
     await insertLines(tx, id);
     await tx`
       UPDATE submissions SET report_date = ${p.date}, farm_id = ${p.farm}, remarks = ${text(p.remarks, 2000)}, weighers = ${text(p.weighers, 1000)},
-        status = 'Submitted', reviewed_by = NULL, reviewed_at = NULL, review_note = '',
+        status = ${status}, reviewed_by = ${auto ? user.id : null}, reviewed_at = ${auto ? sql`now()` : null},
+        review_note = ${auto ? autoNote(user, 'amended') : ''},
         amended_by = ${user.id}, amended_at = now()
       WHERE id = ${id}`;
   });
+  return { status };
 }
 
 /* ------------------------------------------------------------------ */
@@ -260,7 +276,7 @@ export async function linesFor(subs: SubmissionRow[]): Promise<Map<number, LineR
 }
 
 /* ------------------------------------------------------------------ */
-/* Review: Supervisor verifies/rejects own farm, Admin can do anything */
+/* Review: Supervisor approves/rejects own farm, Admin can do anything */
 /* ------------------------------------------------------------------ */
 
 export async function setStatus(user: SessionUser, id: number, status: Status, note: string) {
@@ -272,8 +288,8 @@ export async function setStatus(user: SessionUser, id: number, status: Status, n
   if (!sub) throw new InputError('Report not found');
   if (user.role === 'Supervisor') {
     if (sub.farm_id !== user.farmId) throw new InputError('This report is not from your farm');
-    if (status === 'Approved') throw new InputError('Only admins can approve');
-    if (sub.status === 'Approved') throw new InputError('Already approved - ask an admin to change it');
+    if (status !== 'Approved' && status !== 'Rejected') throw new InputError('Supervisors can approve or reject');
+    if (sub.status === 'Approved') throw new InputError('Already approved - ask an admin to reopen it');
   }
   if (status === 'Rejected' && !note.trim()) throw new InputError('Write the reason for rejecting');
   await sql`UPDATE submissions SET status = ${status}, reviewed_by = ${user.id}, reviewed_at = now(), review_note = ${note.trim().slice(0, 500)} WHERE id = ${id}`;

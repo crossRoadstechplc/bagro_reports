@@ -99,7 +99,7 @@ export default function ReportForms({ config, user, edit }: { config: AppConfig;
         const body = await res.json().catch(() => ({}));
         if (res.ok) {
           setBox(outboxRef.current.filter((i) => i.payload.clientId !== item.payload.clientId));
-          show('Report sent ✓', 'ok');
+          show(body.status === 'Approved' ? 'Report saved and approved ✓' : 'Report sent ✓ - waiting for supervisor approval', 'ok');
         } else if (res.status >= 500) {
           break; // server trouble - retry later
         } else {
@@ -197,7 +197,7 @@ export default function ReportForms({ config, user, edit }: { config: AppConfig;
       });
       const body = await res.json().catch(() => ({}));
       if (!res.ok) { show(body.error || `Could not save (error ${res.status})`, 'err'); return; }
-      show('Changes saved ✓ - sent back for review', 'ok');
+      show(body.status === 'Approved' ? 'Changes saved and approved ✓' : 'Changes saved ✓ - sent back for review', 'ok');
       router.push(edit.backHref);
       router.refresh();
     } catch {
@@ -426,7 +426,7 @@ export default function ReportForms({ config, user, edit }: { config: AppConfig;
       {edit && (
         <div className="notice">
           <b>Amending report #{edit.report.id}</b> ({KIND_LABEL[edit.report.kind]}, sent by {edit.report.reporter}, status {edit.report.status}).<br />
-          Saving replaces the report and sends it back for review. The previous version is kept.
+          Saving replaces the report and approves it under your name ({user.name}). The previous version is kept.
         </div>
       )}
       {!edit && <div className="seg">

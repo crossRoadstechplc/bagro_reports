@@ -10,7 +10,7 @@ export default async function MyReports(props: PageProps<'/my-reports'>) {
   const status = (STATUSES.includes(sp.status as Status) ? sp.status : 'All') as Status | 'All';
   const subs = await listSubmissions(user, { mine: true, status, limit: 100 });
   const lines = await linesFor(subs);
-  const filters: [string, string][] = [['All', 'All'], ['Submitted', 'Waiting review'], ['Verified', 'Verified'], ['Approved', 'Approved'], ['Rejected', 'Rejected']];
+  const filters: [string, string][] = [['All', 'All'], ['Submitted', 'Waiting review'], ['Approved', 'Approved'], ['Rejected', 'Rejected']];
 
   return (
     <main className="narrow">

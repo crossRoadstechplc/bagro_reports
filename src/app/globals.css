@@ -137,8 +137,3 @@ table.plain th { font-size: 12px; color: var(--muted); font-weight: 600; }
 #toast.err { background: var(--cherry); }
 #toast.ok { background: var(--green-d); }
 .login { max-width: 380px; margin: 40px auto; }
-.demo-login { display: flex; width: 100%; justify-content: space-between; align-items: center; gap: 8px;
-  background: #fff8e1; border: 1px dashed var(--sun-d); border-radius: 10px; padding: 10px 12px;
-  font: inherit; font-size: 14px; color: var(--ink); cursor: pointer; text-align: left; }
-.demo-login:hover, .demo-login:focus-visible { background: #fff1c2; outline: 2px solid var(--sun-d); }
-.demo-login small { color: var(--muted); font-size: 12px; white-space: nowrap; }

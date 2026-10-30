@@ -12,22 +12,24 @@ function summary(s: SubmissionRow) {
 
 export default function SubmissionCard({ s, lines, children }: { s: SubmissionRow; lines: LineRow[]; children?: React.ReactNode }) {
   const cols = lines[0] ? Object.keys(lines[0]) : [];
+  const auto = s.status === 'Approved' && s.reviewNote.startsWith('Auto-approved');
   return (
     <div className="sub-card">
       <div className="meta">
         <span>
-          <b>{KIND_LABEL[s.kind]}</b> · {ethLabel(s.reportDate)} <span className="muted">({s.reportDate})</span> · {s.farmName} · by {s.reporter}
+          <b>{KIND_LABEL[s.kind]}</b> · {ethLabel(s.reportDate)} <span className="muted">({s.reportDate})</span> · {s.farmName} · entered by <b>{s.reporter}</b>
         </span>
         <span className={`status st-${s.status}`}>{s.status}</span>
       </div>
       <div className="muted">
         {summary(s)}
-        {s.reviewer && <> · {s.status.toLowerCase()} by {s.reviewer}</>}
+        {s.reviewer && !auto && <> · {s.status.toLowerCase()} by {s.reviewer}</>}
       </div>
+      {auto && <div className="muted">✓ Approved automatically ({s.reviewNote.replace('Auto-approved: ', '')}) - {s.reviewer}, {s.reviewedAt}</div>}
       {s.amendedBy && (
         <div className="muted">✏️ Amended by {s.amendedBy} on {s.amendedAt}{s.editCount > 1 ? ` (${s.editCount} times)` : ''}</div>
       )}
-      {s.reviewNote && <div className="diff warn">Note: {s.reviewNote}</div>}
+      {s.reviewNote && !auto && <div className={s.status === 'Rejected' ? 'diff warn' : 'muted'}>Note: {s.reviewNote}</div>}
       <details>
         <summary>Show details · report #{s.id}</summary>
         <div className="tablewrap">

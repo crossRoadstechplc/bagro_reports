@@ -19,7 +19,7 @@ export function NewUserForm({ farms }: { farms: Farm[] }) {
           <select name="role" defaultValue="Reporter">
             <option value="Reporter">Reporter (submits reports for own farm)</option>
             <option value="Office">Office (enters and amends reports, all farms)</option>
-            <option value="Supervisor">Supervisor (verifies own farm)</option>
+            <option value="Supervisor">Supervisor (approves own farm)</option>
             <option value="Admin">Admin (everything)</option>
           </select>
         </label>

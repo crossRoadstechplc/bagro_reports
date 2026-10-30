@@ -15,8 +15,8 @@ export async function PUT(req: Request, ctx: RouteContext<'/api/reports/[id]'>) 
     return NextResponse.json({ error: 'Bad request' }, { status: 400 });
   }
   try {
-    await updateSubmission(user, id, payload);
-    return NextResponse.json({ ok: true, id });
+    const r = await updateSubmission(user, id, payload);
+    return NextResponse.json({ ok: true, id, status: r.status });
   } catch (e) {
     if (e instanceof InputError) return NextResponse.json({ error: e.message }, { status: 422 });
     console.error(e);
